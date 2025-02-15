@@ -19,6 +19,6 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 Enter the bootloader in 3 ways:
 
-* **Keycode in layout**: Press the key mapped to `QK_BOOT`: mid-right thumb plus very left-most key.
+* **Keycode in layout**: Press the key mapped to `QK_BOOT`: top row, highest key on either side, plus very left-most key.
 * **Bootmagic reset**: Hold down the key at (0,0) in the matrix (the left outer-ring key) and plug in the keyboard.
 * **Physical reset button**: Briefly press the button on the front of the PCB, if available. Double tap for Pro Micro, 1 second press for Sea Picro / RP2040s.

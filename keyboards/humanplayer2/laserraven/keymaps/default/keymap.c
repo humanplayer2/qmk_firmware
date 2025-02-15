@@ -40,6 +40,7 @@ DK_LABK = KC_NUBS,
 DK_RABK = S(KC_NUBS),
 DK_GRV = S(KC_EQUAL),
 DK_AIGU = KC_EQUAL,
+DK_HAT = S(KC_RBRC),
 DK_EQUAL = S(KC_0),
 DK_TILDE = ALGR(KC_RBRC),
 DK_PIPE = ALGR(KC_EQUAL),
@@ -61,11 +62,13 @@ RCTL_ESC = (MT(MOD_RCTL,KC_ESC)),
 SH_SPC = (MT(MOD_RSFT,KC_SPACE)),
 RM_SPC = (LT(_RMOD,KC_SPACE)),
 SYM_ENT = (LT(_SYM, KC_ENTER)),
+NM_F = (LT(_NUM, KC_F)),
+NM_U = (LT(_NUM, KC_U)),
   //
   // Other layers
 RCTL_P7 = (MT(MOD_RCTL,KC_P7)), // right index ctrl
-ALT_Q = (MT(MOD_LALT,KC_Q)),
-OE_NUM = (LT(_NUM,DK_OE))
+AL_OE = (MT(MOD_LALT,DK_OE)),
+AL_AE = (MT(MOD_LALT,DK_AE))
 };
 
 
@@ -93,31 +96,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_4x5(
-                    ALT_Q, KC_W, KC_F, KC_P, KC_B,    KC_J, KC_L, KC_U, KC_Y, KC_Z,
-     KC_TAB, DK_OE, KC_A,  KC_R, KC_S, KC_T, KC_G,    KC_M, KC_N, KC_E, KC_I, KC_O, DK_AE, DK_AA,
-                           KC_X, KC_C, KC_D, KC_V,    KC_K, KC_H, KC_COMMA, KC_DOT,
+                    KC_Q, KC_W, NM_F, KC_P, KC_B,    KC_J, KC_L, NM_U, KC_Y, KC_Z,
+     KC_TAB, AL_OE, KC_A, KC_R, KC_S, KC_T, KC_G,    KC_M, KC_N, KC_E, KC_I, KC_O, AL_AE, DK_AA,
+                          KC_X, KC_C, KC_D, KC_V,    KC_K, KC_H, KC_COMMA, KC_DOT,
                         RCTL_ESC, SH_SPC, KC_BTN1,    KC_BTN3, RM_SPC, SYM_ENT
         ),
 
     [_RMOD] = LAYOUT_4x5(
-                          G(KC_ESC), C(KC_PGUP), KC_P1,  C(KC_PGDN), C(KC_W),     KC_DEL,  KC_HOME,   KC_UP,     KC_END,   ____,
-     QK_BOOT, A(KC_LEFT), ____,     KC_P3,      KC_P5,  RCTL_P7,    C(KC_T),      KC_BSPC, KC_LEFT,   KC_DOWN,   KC_RIGHT, ____, ____, G(KC_L),
+                          G(KC_ESC), C(KC_PGUP), KC_P1,  C(KC_PGDN), C(KC_W),     KC_DEL,  KC_HOME,   KC_UP,     KC_END,   G(KC_L),
+     _______, A(KC_LEFT), ____,     KC_P3,      KC_P5,  RCTL_P7,    C(KC_T),      KC_BSPC, KC_LEFT,   KC_DOWN,   KC_RIGHT, ____, ____, ____,
                                     G(DK_MINUS),G(KC_C),G(DK_PLUS), KC_V,         KC_APP,  C(KC_INS), S(KC_INS), C(KC_X),
                                                 ____,    ____,      G(KC_SPC),    ____,    ____,      G(KC_ENT)
         ),
 
     [_SYM] = LAYOUT_4x5(
-                VOL_MU,  VOL_DN, VOL_UP,   KC_BRID, KC_BRIU,      DK_STAR, KC_HASH,  KC_BSLS,     DK_GRV,  DK_AT,
-     ____, ____,DK_PIPE, DK_AMPR, KC_EXLM, DK_QUES, DK_DOL,       DK_SLSH, DK_LPRN,  DK_LBRC,     DK_LCBR, DK_LABK, DK_TILDE, ____,
-                         ____,    ____,    ____,    ____,         DK_PLUS, DK_MINUS, S(DK_MINUS), DK_EQUAL,
-                                      ____, ____, MO(_NUM),       ____, ____, ____
+                   VOL_MU,  VOL_DN, VOL_UP,   KC_BRID, KC_BRIU,      DK_STAR, KC_HASH,  KC_BSLS,     DK_GRV,  DK_AT,
+     ____, DK_HAT, DK_PIPE, DK_AMPR, KC_EXLM, DK_QUES, DK_DOL,       DK_SLSH, DK_LPRN,  DK_LBRC,     DK_LCBR, DK_LABK, DK_TILDE, ____,
+                            ____,    ____,    ____,    ____,         DK_PLUS, DK_MINUS, S(DK_MINUS), DK_EQUAL,
+                                             ____, ____, ____,       ____, ____, ____
         ),
 
     [_NUM] = LAYOUT_4x5(
-                 ____, KC_F4,  KC_F3,  KC_F2,  KC_F1,    ____, KC_1, KC_2, KC_3, ____,
-     ____, ____, ____, KC_F8,  KC_F7,  KC_F6,  KC_F5,    ____, KC_4, KC_5, KC_6, KC_0, ____, ____,
-                       KC_F12, KC_F11, KC_F10, KC_F9,    ____, KC_7, KC_8, KC_9,
-                                    ____, ____, ____,    ____, ____, ____
+                    ____, KC_F4,  KC_F3,  KC_F2,  KC_F1,    ____, KC_1, KC_2, KC_3, ____,
+     QK_BOOT, ____, ____, KC_F8,  KC_F7,  KC_F6,  KC_F5,    ____, KC_4, KC_5, KC_6, KC_0, ____, ____,
+                          KC_F12, KC_F11, KC_F10, KC_F9,    ____, KC_7, KC_8, KC_9,
+                                       ____, ____, ____,    ____, ____, ____
         )
 };
-
