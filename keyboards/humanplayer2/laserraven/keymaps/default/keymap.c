@@ -67,8 +67,8 @@ NM_U = (LT(_NUM, KC_U)),
   //
   // Other layers
 RCTL_P7 = (MT(MOD_RCTL,KC_P7)), // right index ctrl
-AL_O = (MT(MOD_LALT,DK_O)),
-AL_A = (MT(MOD_LALT,DK_A))
+AL_O = (MT(MOD_LALT,KC_O)),
+AL_A = (MT(MOD_LALT,KC_A))
 };
 
 
