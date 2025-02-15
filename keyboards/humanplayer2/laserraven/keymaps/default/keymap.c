@@ -74,14 +74,15 @@ AL_A = (MT(MOD_LALT,KC_A))
 
 // Custom shift keys
 const custom_shift_key_t custom_shift_keys[] = {
-  {KC_BSLS, DK_DQUO}, // ' is "
-  {KC_HASH, KC_PERC}, // # is %
+  {KC_BSLS, DK_DQUO}, // Shift ' is "
+  {DK_GRV, DK_AIGU},  // Shift ` is ´
+  {KC_HASH, KC_PERC}, // Shift # is %
+  {DK_STAR, DK_DOL},  // Shift * is $
   {DK_SLSH, DK_BSLS}, // Shift / is \ .
   {DK_LPRN, DK_RPRN}, // Shift ( is )
   {DK_LBRC, DK_RBRC}, // Shift [ is ]
   {DK_LCBR, DK_RCBR}, // Shift { is }
   {DK_LABK, DK_RABK}, // Shift < is >
-  {DK_GRV, DK_AIGU},  // Shift ` is ´
   {KC_BTN3, KC_BTN2}, // Mouse button
 };
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
@@ -99,27 +100,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_Q, KC_W, NM_F, KC_P, KC_B,    KC_J, KC_L, NM_U, KC_Y, KC_Z,
      KC_TAB, DK_OE, AL_A, KC_R, KC_S, KC_T, KC_G,    KC_M, KC_N, KC_E, KC_I, AL_O, DK_AE, DK_AA,
                           KC_X, KC_C, KC_D, KC_V,    KC_K, KC_H, KC_COMMA, KC_DOT,
-                        RCTL_ESC, SH_SPC, KC_BTN1,    KC_BTN3, RM_SPC, SYM_ENT
+                        RCTL_ESC, SH_SPC, KC_BTN1,   KC_BTN3, RM_SPC, SYM_ENT
         ),
 
     [_RMOD] = LAYOUT_4x5(
-                          G(KC_ESC), C(KC_PGUP), KC_P1,  C(KC_PGDN), C(KC_W),     KC_DEL,  KC_HOME,   KC_UP,     KC_END,   G(KC_L),
-     _______, A(KC_LEFT), ____,     KC_P3,      KC_P5,  RCTL_P7,    C(KC_T),      KC_BSPC, KC_LEFT,   KC_DOWN,   KC_RIGHT, ____, C(KC_Z), ____,
-                                    G(DK_MINUS),G(KC_C),G(DK_PLUS), ____,         KC_APP,  C(KC_INS), S(KC_INS), C(KC_X),
-                                                ____,    ____,      G(KC_SPC),    ____,    ____,      G(KC_ENT)
+                       G(KC_ESC), C(KC_PGUP), KC_P1,  C(KC_PGDN), C(KC_W),     KC_DEL,  KC_HOME,   KC_UP,     KC_END,   G(KC_L),
+     ____, A(KC_LEFT), ____,      KC_P3,      KC_P5,  RCTL_P7,    C(KC_T),     KC_BSPC, KC_LEFT,   KC_DOWN,   KC_RIGHT, ____, C(KC_Z), ____,
+                                 G(DK_MINUS),G(KC_C), G(DK_PLUS), ____,        KC_APP,  C(KC_INS), S(KC_INS), C(KC_X),
+                                             ____,    ____,      G(KC_SPC),    ____,    ____,      G(KC_ENT)
         ),
 
     [_SYM] = LAYOUT_4x5(
-                   VOL_MU,  VOL_DN, VOL_UP,   KC_BRID, KC_BRIU,      DK_STAR, KC_HASH,  KC_BSLS,     DK_GRV,  DK_AT,
-     ____, DK_HAT, DK_PIPE, DK_AMPR, KC_EXLM, DK_QUES, DK_DOL,       DK_SLSH, DK_LPRN,  DK_LBRC,     DK_LCBR, DK_LABK, DK_TILDE, ____,
-                            ____,    ____,    ____,    ____,         DK_PLUS, DK_MINUS, S(DK_MINUS), DK_EQUAL,
-                                             ____, ____, ____,       ____, ____, ____
+                   KC_BRID, KC_BRIU, VOL_DN,  VOL_UP,   VOL_MU,         DK_STAR, KC_HASH,  KC_BSLS,     DK_GRV,  ____,
+     ____, DK_HAT, DK_AMPR, DK_AT,   DK_QUES,  KC_EXLM, DK_PIPE,        DK_SLSH, DK_LPRN,  DK_LBRC,     DK_LCBR, DK_LABK, DK_TILDE, ____,
+                            ____,    ____,     ____,    ____,           DK_PLUS, DK_MINUS, S(DK_MINUS), DK_EQUAL,
+                                               ____, ____, ____,        ____, ____, ____
         ),
 
     [_NUM] = LAYOUT_4x5(
                      ____,   KC_F3,  KC_F2,  KC_F1,  ____,    ____, KC_1, KC_2, KC_3, ____,
      KC_F12, KC_F11, KC_F10, KC_F6,  KC_F5,  KC_F4,  ____,    ____, KC_4, KC_5, KC_6, KC_0, ____, QK_BOOT,
-                             KC_F9, KC_F8, KC_F7, ____,    ____, KC_7, KC_8, KC_9,
-                                       ____, ____, ____,    ____, ____, ____
+                             KC_F9,  KC_F8,  KC_F7,  ____,    ____, KC_7, KC_8, KC_9,
+                                         ____, ____, ____,    ____, ____, ____
         )
 };
