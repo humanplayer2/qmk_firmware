@@ -3,8 +3,6 @@
 
 #include QMK_KEYBOARD_H
 #include "features/custom_shift_keys.h"
-// #include "ps2_mouse.h"
-// #include "ps2.h"
 
 // Layers
 enum {
@@ -14,6 +12,9 @@ enum {
     _NUM = 3,
 };
 
+enum custom_keycodes {
+    SCROLL = SAFE_RANGE,
+};
 
 // Keycode names:
 enum my_keycodes {
@@ -88,19 +89,36 @@ const custom_shift_key_t custom_shift_keys[] = {
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
     sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
 
-bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_custom_shift_keys(keycode, record)) { return false; }
-  // Your macros ...
 
-  return true;
+bool set_scrolling = false;
+
+report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) { // See also https://www.reddit.com/r/qmk/comments/17x74wt/comment/k9ulzqy/
+    if (set_scrolling) {
+        mouse_report.h = mouse_report.x / PS2_MOUSE_X_MULTIPLIER;
+        mouse_report.v = mouse_report.y / PS2_MOUSE_Y_MULTIPLIER;
+        mouse_report.x = 0;
+        mouse_report.y = 0;
+		    mouse_report.v = -mouse_report.v;
+    }
+    return mouse_report;
 }
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!process_custom_shift_keys(keycode, record)) { return false; }
+    if (keycode == SCROLL && record->event.pressed) {
+    set_scrolling = true;} else {
+    set_scrolling = false;
+    }
+    return true;
+}
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_4x5(
                     KC_Q, KC_W, NM_F, KC_P, KC_B,    KC_J, KC_L, NM_U, KC_Y, KC_Z,
      KC_TAB, DK_OE, AL_A, KC_R, KC_S, KC_T, KC_G,    KC_M, KC_N, KC_E, KC_I, AL_O, DK_AE, DK_AA,
                           KC_X, KC_C, KC_D, KC_V,    KC_K, KC_H, KC_COMMA, KC_DOT,
-                        RCTL_ESC, SH_SPC, KC_BTN1,   KC_BTN3, RM_SPC, SYM_ENT
+                        RCTL_ESC, SH_SPC, KC_BTN1,   SCROLL, RM_SPC, SYM_ENT
         ),
 
     [_RMOD] = LAYOUT_4x5(

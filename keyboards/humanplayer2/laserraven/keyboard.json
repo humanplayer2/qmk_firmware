@@ -20,8 +20,7 @@
         "clock_pin": "GP3",
         "data_pin": "GP2",
         "driver": "vendor",
-        "enabled": true,
-        "mouse_enabled": true
+        "enabled": true
     },
     "matrix_pins": {
         "cols": [ "GP28", "GP29", "GP27", "GP0", "GP1" ],
