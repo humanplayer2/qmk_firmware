@@ -1,8 +1,8 @@
 {
-    "url": "https://github.com/humanplayer2/mkmods",
-    "maintainer": "humanplayer2",
-    "keyboard_name": "LaserRaven",
+    "keyboard_name": "LaserRaven Trackpoint",
     "manufacturer": "humanplayer2",
+    "maintainer": "humanplayer2",
+    "url": "https://github.com/humanplayer2/mkmods",
     "processor": "RP2040",
     "bootloader": "rp2040",
     "usb": {
