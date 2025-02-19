@@ -1,6 +1,6 @@
 {
-    "manufacturer": "Rasmus K. Rendsvig",
-    "keyboard_name": "Laser Prothetic",
+    "keyboard_name": "LaserProsthetic Trackpoint",
+    "manufacturer": "Rasmus K. Rendsvig (@humanplayer2)",
     "maintainer": "humanplayer2",
     "bootloader": "caterina",
     "diode_direction": "ROW2COL",

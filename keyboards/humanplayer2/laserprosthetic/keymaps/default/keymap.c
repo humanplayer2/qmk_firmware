@@ -1,37 +1,10 @@
 #include QMK_KEYBOARD_H
 #include "features/custom_shift_keys.h"
-#include "ps2_mouse.h"
-#include "ps2.h"
-
-void ps2_mouse_init_user(void) {
-// See documentation in TrackPointDocumentation.pdf
-// TrackPoint sensitivity
-// Set as high as possible without resulting drift/noise
-PS2_MOUSE_SEND(0xE2, "trackpoint command");
-PS2_MOUSE_SEND(0x81, "write byte");
-PS2_MOUSE_SEND(0xFF, "sensitivity");
-// PS2_MOUSE_SEND(0x4A, "sensitivity");
-//PS2_MOUSE_SEND(0xA0, "data"); // default = x80 (1). range = 0x00 to 0xFF (0 to 1.99)
-PS2_MOUSE_SEND(0x70, "data"); // default = x80 (1). range = 0x00 to 0xFF (0 to 1.99)
-// PS2_MOUSE_SEND(0xE2, "trackpoint command");
-// PS2_MOUSE_SEND(0x81, "write byte");
-// PS2_MOUSE_SEND(0x4D, "negative inertia");
-// PS2_MOUSE_SEND(0x00, "data"); // disabled = x00, default = 06, tror jeg: https://www.reddit.com/r/TrackPoint_Builders/comments/xkghxa/trackpoint_protocol_you_need_post_processing_for/
-//
-// value6 is "Transfer Function Upper Plateau Speed"
-// https://www.reddit.com/r/MechanicalKeyboards/wiki/trackpoint/?v=a699e6a8-e706-11eb-b7c2-0eb8334becf3
-PS2_MOUSE_SEND(0xE2, "trackpoint command");
-PS2_MOUSE_SEND(0x81, "write byte");
-PS2_MOUSE_SEND(0x60, "value6");
-PS2_MOUSE_SEND(0x61, "data"); // default = x61
-}
-
 
 // Layer names and numbers
 // used in keycodes names below
 enum my_layers {
  _BASE = 0,
- // _LMOD_NOTUSED = 1,
  _RMOD = 1,
  _SYM = 2,
  _NUM = 3,
@@ -39,7 +12,7 @@ enum my_layers {
 
 enum custom_keycodes {
     DK_E_AIGU = SAFE_RANGE,
-//    S_DK_E_AIGU,
+//    S_DK_E_AIGU, // never got this to work
 };
 
 // Keycode names:
@@ -184,7 +157,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_SYM] = LAYOUT(
-      KC_NO,       KC_NO,      KC_NO,       KC_NO,     KC_NO,      KC_NO,                         KC_NO,      KC_NO,      KC_NO,     KC_NO,        KC_NO,      KC_NO,
+      QK_BOOT,       KC_NO,      KC_NO,       KC_NO,     KC_NO,      KC_NO,                         KC_NO,      KC_NO,      KC_NO,     KC_NO,        KC_NO,      KC_NO,
       CW_TOGG,     _______,    DK_AMPR,     KC_EXLM,   DK_QUES,    DK_DOL,                        DK_STAR,    KC_HASH,    KC_BSLS,   DK_GRV,       DK_AT,      DK_PIPE,
       _______,     _______,    _______,     _______,   _______,    _______,    _______,           _______,    DK_SLSH,    DK_LPRN,   DK_LBRC,      DK_LCBR,    DK_LABK,   DK_TILDE,
                                _______,     _______,   _______,    _______,    _______,                       DK_PLUS,    DK_MINUS,  S(DK_MINUS),  DK_EQUAL,
