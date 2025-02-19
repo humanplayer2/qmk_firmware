@@ -9,17 +9,20 @@
 #define TAPPING_TERM 175
 #define PERMISSIVE_HOLD
 
-// Trackpoint
-#define PS2_PIO_USE_PIO1 // Force the usage of PIO1 peripheral, by default the PS2 implementation uses the PIO0 peripheral
+// Trackpoint: PS/2 in Pointing Devices
+// Config also in keyboard.json
+// Scrolling with KC_BTN3 works on Linux because board name ends with "Trackpoint"
+#define PS2_PIO_USE_PIO1
 #define PS2_MOUSE_USE_REMOTE_MODE
 #define PS2_MOUSE_INIT_DELAY 500
 
-#define PS2_MOUSE_INVERT_X
-#define PS2_MOUSE_INVERT_Y
-
-#define PS2_MOUSE_SCROLL_BTN_MASK (1<<PS2_MOUSE_BTN_MIDDLE)
-#define PS2_MOUSE_SCROLL_BTN_SEND 300
+#define POINTING_DEVICE_ROTATION_180
 
 #define PS2_MOUSE_X_MULTIPLIER 2
 #define PS2_MOUSE_Y_MULTIPLIER 2
 #define PS2_MOUSE_V_MULTIPLIER 1
+
+// Automatic Mouse Layer:
+#define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#define AUTO_MOUSE_TIME 175
+#define AUTO_MOUSE_DEBOUNCE 10 // Amount of mouse movement required to switch layers: minimum 10, default 25

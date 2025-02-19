@@ -1,8 +1,8 @@
 {
-    "url": "https://github.com/humanplayer2/mkmods",
-    "maintainer": "humanplayer2",
-    "keyboard_name": "LaserRaven",
+    "keyboard_name": "LaserRaven Trackpoint",
     "manufacturer": "humanplayer2",
+    "maintainer": "humanplayer2",
+    "url": "https://github.com/humanplayer2/mkmods",
     "processor": "RP2040",
     "bootloader": "rp2040",
     "usb": {
@@ -20,8 +20,7 @@
         "clock_pin": "GP3",
         "data_pin": "GP2",
         "driver": "vendor",
-        "enabled": true,
-        "mouse_enabled": true
+        "enabled": true
     },
     "matrix_pins": {
         "cols": [ "GP28", "GP29", "GP27", "GP0", "GP1" ],
