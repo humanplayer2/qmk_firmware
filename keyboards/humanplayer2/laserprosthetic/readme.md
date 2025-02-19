@@ -27,8 +27,9 @@ Enter the bootloader in one of three ways:
 * **Physical reset button**: Twice short `RST` and `GND` on the ProMicro.
 
 ## Flashing Permissions on Fedora
-When flashing, if `Waiting for /dev/ttyACM0 to become writable...` keeps ticking, either
-- open another terminal and run `sudo chmod o+rw /dev/ttyACM0`, or, 
+When flashing, if `Waiting for /dev/ttyACM0 to become writable...` keeps ticking
+- run `qmk doctor` and check if it warns about missing `udev` rules for `catarina` boards. Run the command it suggest: ish `sudo cp $HOME/qmk_firmware/util/udev/50-qmk.rules /etc/udev/rules.d/`
+- or, for single open another terminal and run `sudo chmod o+rw /dev/ttyACM0`, or, 
 - for a long term solution, find the owning group by 
     - `ll /dev/ttyACM0` (it's `dialout` for me), and 
     - add your user to the group: `sudo usermod -aG dialout youruser`,
