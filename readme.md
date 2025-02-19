@@ -1,14 +1,18 @@
 # humanplayer2 QMK fork
 
-Warning- This is a `develop` branch of QMK Firmware. You may encounter broken code here.
+> Warning - This is a `develop` branch of QMK Firmware. You may encounter broken code here.
 
-# Trackpoint support
+My keyboards are in `keyboards/humanplayer2/`
 
-- Trackpoint is treated as a pointing devices, by including PS/2 in Pointing Devices, by (this PR)[https://github.com/qmk/qmk_firmware/pull/22532].
+## Trackpoints
+
+A main purpose of this fork to maintain firmware for my keyboards with trackpoint.
+
+
+- Trackpoint is treated as a pointing devices, by including PS/2 in Pointing Devices, by [this PR](https://github.com/qmk/qmk_firmware/pull/22532).
 - Pointing Devices does not support `PS2_MOUSE_SCROLL_BTN_MASK` for scrolling.
 - Trackpoint scrolling using `KC_BTN3` works out-of-the-box via Linux drivers if the keyboard name ends with `Trackpoint`.
-    - Alternatively, the `SCROLL` implementation introduced in (this commit)[https://github.com/humanplayer2/qmk_firmware/commit/6c21090f35c127b8988990911239ec8c429a41d9] also worked for scrolling.
-
+    - Alternatively, use the `SCROLL` implementation from [this commit](https://github.com/humanplayer2/qmk_firmware/commit/6c21090f35c127b8988990911239ec8c429a41d9).
 
 
 # Quantum Mechanical Keyboard Firmware
