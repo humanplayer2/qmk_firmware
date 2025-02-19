@@ -24,5 +24,5 @@
 
 // Automatic Mouse Layer:
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
-#define AUTO_MOUSE_TIME 500
+#define AUTO_MOUSE_TIME 175
 #define AUTO_MOUSE_DEBOUNCE 10 // Amount of mouse movement required to switch layers: minimum 10, default 25
