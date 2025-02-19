@@ -1,0 +1,89 @@
+{
+    "keyboard_name": "LaserRaven Trackpoint",
+    "manufacturer": "humanplayer2",
+    "maintainer": "humanplayer2",
+    "url": "https://github.com/humanplayer2/mkmods",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "usb": {
+        "vid": "0x1984",
+        "pid": "0x2025",
+        "device_version": "1.0.0"
+    },
+    "features": {
+        "bootmagic": true,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true
+    },
+    "ps2": {
+        "clock_pin": "GP3",
+        "data_pin": "GP2",
+        "driver": "vendor",
+        "enabled": true
+    },
+    "matrix_pins": {
+        "cols": [ "GP28", "GP29", "GP27", "GP0", "GP1" ],
+        "rows": [ "GP22", "GP6",
+                  "GP20", "GP7",
+                  "GP23", "GP8",
+                  "GP21", "GP9"
+                ]
+    },
+    "diode_direction": "COL2ROW",
+    "layouts": {
+        "LAYOUT_4x5": {
+            "layout": [
+                {"matrix": [0, 0], "x": 0, "y": 0},
+                {"matrix": [0, 1], "x": 0, "y": 1},
+                {"matrix": [0, 2], "x": 0, "y": 2},
+                {"matrix": [0, 3], "x": 0, "y": 3},
+                {"matrix": [0, 4], "x": 0, "y": 4},
+
+                {"matrix": [1, 4], "x": 0, "y": 5},
+                {"matrix": [1, 3], "x": 0, "y": 6},
+                {"matrix": [1, 2], "x": 0, "y": 7},
+                {"matrix": [1, 1], "x": 0, "y": 8},
+                {"matrix": [1, 0], "x": 0, "y": 9},
+
+
+                {"matrix": [6, 0], "x": 0, "y": 0},
+                {"matrix": [4, 0], "x": 0, "y": 0},
+                {"matrix": [2, 0], "x": 0, "y": 0},
+
+                {"matrix": [2, 1], "x": 0, "y": 1},
+                {"matrix": [2, 2], "x": 0, "y": 2},
+                {"matrix": [2, 3], "x": 0, "y": 3},
+                {"matrix": [2, 4], "x": 0, "y": 4},
+
+                {"matrix": [3, 4], "x": 0, "y": 5},
+                {"matrix": [3, 3], "x": 0, "y": 6},
+                {"matrix": [3, 2], "x": 0, "y": 7},
+                {"matrix": [3, 1], "x": 0, "y": 8},
+
+                {"matrix": [3, 0], "x": 0, "y": 9},
+                {"matrix": [5, 0], "x": 0, "y": 9},
+                {"matrix": [7, 0], "x": 0, "y": 9},
+
+                {"matrix": [4, 1], "x": 0, "y": 2},
+                {"matrix": [4, 2], "x": 0, "y": 2},
+                {"matrix": [4, 3], "x": 0, "y": 3},
+                {"matrix": [4, 4], "x": 0, "y": 4},
+
+                {"matrix": [5, 4], "x": 0, "y": 5},
+                {"matrix": [5, 3], "x": 0, "y": 6},
+                {"matrix": [5, 2], "x": 0, "y": 7},
+                {"matrix": [5, 1], "x": 0, "y": 8},
+
+                {"matrix": [6, 2], "x": 0, "y": 2},
+                {"matrix": [6, 3], "x": 0, "y": 3},
+                {"matrix": [6, 4], "x": 0, "y": 4},
+
+                {"matrix": [7, 4], "x": 0, "y": 5},
+                {"matrix": [7, 3], "x": 0, "y": 6},
+                {"matrix": [7, 2], "x": 0, "y": 7}
+
+            ]
+        }
+    }
+}
