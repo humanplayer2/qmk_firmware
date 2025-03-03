@@ -97,8 +97,8 @@ const custom_shift_key_t custom_shift_keys[] = {
   {KC_BSLS, DK_DQUO}, // Shift ' is "
   {DK_GRV, DK_AIGU},  // Shift ` is ´
   {KC_HASH, KC_PERC}, // Shift # is %
-  {DK_STAR, DK_DOL},  // Shift * is $
-  {DK_SLSH, DK_BSLS}, // Shift / is \ .
+  {DK_STAR, DK_HAT},  // Shift * is ^
+  {DK_SLSH, DK_BSLS}, // Shift / is \                        ---
   {DK_LPRN, DK_RPRN}, // Shift ( is )
   {DK_LBRC, DK_RBRC}, // Shift [ is ]
   {DK_LCBR, DK_RCBR}, // Shift { is }
@@ -151,8 +151,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_4x5(
-                      DK_AE  , KC_W   , KC_F   , KC_P   , KC_B   ,         KC_J   , KC_L   , KC_U   , KC_Y   , DK_OE  ,
-    KC_TAB , KC_Q   , AL_A   , KC_R   , KC_S   , KC_T   , KC_G   ,         KC_M   , KC_N   , KC_E   , KC_I   , AL_O   , KC_Z   , DK_AA  ,
+                      KC_TAB , KC_W   , KC_F   , KC_P   , KC_B   ,         KC_J   , KC_L   , KC_U   , KC_Y   , KC_Z   ,
+    DK_AE  , KC_Q  ,  AL_A   , KC_R   , KC_S   , KC_T   , KC_G   ,         KC_M   , KC_N   , KC_E   , KC_I   , AL_O   , DK_OE  , DK_AA  ,
                                KC_X   , KC_C   , KC_D   , KC_V   ,         KC_K   , KC_H   , KC_COMM, KC_DOT ,
                                         CTL_ESC, SH_SPC , NUM_BT1,         KC_BTN3, RM_SPC , SYM_ENT
     ),
@@ -166,7 +166,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_SYM] = LAYOUT_4x5(
                       KC_BRID, KC_BRIU, VOL_DN , VOL_UP , VOL_MU ,         DK_STAR, KC_HASH,  KC_BSLS, DK_GRV,  __xxx__,
-    __xxx__, DK_HAT , DK_AMPR, DK_AT  , DK_QUES, KC_EXLM, DK_PIPE,         DK_SLSH, DK_LPRN,  DK_LBRC, DK_LCBR, DK_LABK, DK_TILD, __xxx__,
+    __xxx__, DK_DOL , DK_AMPR, DK_AT  , DK_QUES, KC_EXLM, DK_PIPE,         DK_SLSH, DK_LPRN,  DK_LBRC, DK_LCBR, DK_LABK, DK_TILD, __xxx__,
                                __xxx__, __xxx__, __xxx__, __xxx__,         DK_PLUS, DK_MNUS,  DK_UNSC, DK_EQUL,
                                         _______, _______, _______,         _______, _______, _______
     ),
