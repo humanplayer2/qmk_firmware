@@ -2,7 +2,7 @@
 
 > Warning - This is a `develop` branch of QMK Firmware. You may encounter broken code here.
 
-My keyboards are in `keyboards/humanplayer2/`
+My keyboards are in [/keyboards/humanplayer2/](/keyboards/humanplayer2/)
 
 ## Trackpoints
 
