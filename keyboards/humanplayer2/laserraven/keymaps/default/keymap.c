@@ -151,13 +151,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_4x5(
-<<<<<<< HEAD
-                      DK_AE  , KC_W   , KC_F   , KC_P   , KC_B   ,         KC_J   , KC_L   , KC_U   , KC_Y   , DK_OE  ,
-    KC_TAB , KC_Q   , AL_A   , KC_R   , KC_S   , KC_T   , KC_G   ,         KC_M   , KC_N   , KC_E   , KC_I   , AL_O   , DK_AA  , KC_Z   ,
-=======
                       KC_TAB , KC_W   , KC_F   , KC_P   , KC_B   ,         KC_J   , KC_L   , KC_U   , KC_Y   , DK_AE  ,
     KC_Z   , KC_Q  ,  AL_A   , KC_R   , KC_S   , KC_T   , KC_G   ,         KC_M   , KC_N   , KC_E   , KC_I   , AL_O   , DK_OE  , DK_AA  ,
->>>>>>> humanplayer2
                                KC_X   , KC_C   , KC_D   , KC_V   ,         KC_K   , KC_H   , KC_COMM, KC_DOT ,
                                         CTL_ESC, SH_SPC , NUM_BT1,         KC_BTN3, RM_SPC , SYM_ENT
     ),
@@ -185,7 +180,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_MOUSE] = LAYOUT_4x5(
                        _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______,
-     _______, _______, _______, _______, _______, _______, _______,        KC_BTN1, KC_BTN2, _______, _______, _______, _______, _______,
+     _______, _______, _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______, _______, _______,
                                 _______, _______, _______, _______,        _______, _______, _______, _______,
                                          _______, _______, KC_BTN1,        _______, _______, _______
     )
