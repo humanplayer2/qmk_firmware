@@ -158,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NAV] = LAYOUT_4x5(
-                      ALT_F4 , TAB_LFT, WS_UP   , TAB_RGT, __xxx__,        KC_DEL , KC_HOME, KC_UP  , KC_END , LOCKSCR,
+                      ALT_F4 , TAB_LFT, WS_UP   , TAB_RGT, A(KC_9),        KC_DEL , KC_HOME, KC_UP  , KC_END , LOCKSCR,
     _______, BACK   , _______, FCS_LFT, WS_DN   , C_FCS_R, __xxx__,        KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, _______, UNDO   , __xxx__,
                                TILE_SM, TILE_CN , TILE_LG, __xxx__,        KC_APP , COPY   , PASTE  , CUT    ,
                                         _______,  _______, LAUNCHR,        _______, _______, TERMINL
