@@ -27,7 +27,7 @@
         "rows": [ "GP22", "GP6",
                   "GP20", "GP7",
                   "GP23", "GP8",
-                  "GP16", "GP12"
+                  "GP16", "GP13"
                 ]
     },
     "diode_direction": "COL2ROW",
