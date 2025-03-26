@@ -9,6 +9,8 @@
 #define TAPPING_TERM 175
 #define PERMISSIVE_HOLD
 
+#define FORCE_NKRO
+
 // Trackpoint: PS/2 in Pointing Devices
 // Config also in keyboard.json
 // Scrolling with KC_BTN3 works on Linux because board name ends with "Trackpoint"
