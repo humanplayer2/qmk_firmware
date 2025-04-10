@@ -15,7 +15,19 @@ enum {
 
 enum custom_keycodes {
     SCROLL = SAFE_RANGE,
+
+// Add é and É keycodes, cf. https://getreuer.info/posts/keyboards/non-english/index.html
+enum unicode_names {
+  DK_E_AIGU_LOWER,
+  DK_E_AIGU_UPPER,
 };
+
+const uint32_t unicode_map[] PROGMEM = {
+  [DK_E_AIGU_LOWER]   = 0x00e9,  // é
+  [DK_E_AIGU_UPPER]   = 0x00c9,  // É 
+};
+
+#define DK_EGU UP(DK_E_AIGU_LOWER, DK_E_AIGU_UPPER)
 
 // Keycode names:
 enum my_keycodes {
@@ -165,7 +177,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_SYM] = LAYOUT_4x5(
-                      KC_BRID, KC_BRIU, VOL_DN , VOL_UP , VOL_MU ,         DK_STAR, KC_HASH,  KC_BSLS, DK_GRV,  __xxx__,
+                      KC_BRID, KC_BRIU, VOL_DN , VOL_UP , VOL_MU ,         DK_STAR, KC_HASH,  KC_BSLS, DK_GRV,  DK_EGU ,
     __xxx__, DK_DOL , DK_AMPR, DK_AT  , DK_QUES, KC_EXLM, DK_PIPE,         DK_SLSH, DK_LPRN,  DK_LBRC, DK_LCBR, DK_LABK, DK_TILD, __xxx__,
                                __xxx__, __xxx__, __xxx__, __xxx__,         DK_PLUS, DK_MNUS,  DK_UNSC, DK_EQUL,
                                         _______, _______, _______,         _______, _______, _______
