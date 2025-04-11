@@ -13,9 +13,6 @@ enum {
     _MOUSE = 4,
 };
 
-enum custom_keycodes {
-    SCROLL = SAFE_RANGE,
-
 // Add é and É keycodes, cf. https://getreuer.info/posts/keyboards/non-english/index.html
 enum unicode_names {
   DK_E_AIGU_LOWER,
@@ -120,23 +117,6 @@ const custom_shift_key_t custom_shift_keys[] = {
 uint8_t NUM_CUSTOM_SHIFT_KEYS =
     sizeof(custom_shift_keys) / sizeof(custom_shift_key_t);
 
-
-// // Trackpoint scrolling
-//    Not need on Linux when keyboard name ends with "Trackpoint"
-//
-// bool set_scrolling = false;
-
-// report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) { // See also https://www.reddit.com/r/qmk/comments/17x74wt/comment/k9ulzqy/
-//     if (set_scrolling) {
-//         mouse_report.h = mouse_report.x / PS2_MOUSE_X_MULTIPLIER;
-//         mouse_report.v = mouse_report.y / PS2_MOUSE_Y_MULTIPLIER;
-//         mouse_report.x = 0;
-//         mouse_report.y = 0;
-//  		   mouse_report.v = -mouse_report.v;
-//     }
-//     return mouse_report;
-// }
-
 // Automatic Mouse Layer
 void pointing_device_init_user(void) {
     set_auto_mouse_layer(_MOUSE); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
@@ -144,16 +124,12 @@ void pointing_device_init_user(void) {
 }
 
 
-//
+// 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!process_custom_shift_keys(keycode, record)) { return false; }
-    // if (keycode == SCROLL && record->event.pressed) {  //
-    // set_scrolling = true;} else {
-    // set_scrolling = false;
-    // }
     switch (keycode) {
       case RM_SPC | CTL_ESC:
-        layer_off(_MOUSE);
+        layer_off(_MOUSE); // disable mouse layer
         return true;
       }
     return true;
