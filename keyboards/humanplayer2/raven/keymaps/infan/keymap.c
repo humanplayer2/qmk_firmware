@@ -64,6 +64,7 @@ DK_UNSC = S(DK_MNUS),     // _
 TAB_LFT = C(KC_PGUP),     // Tab left
 TAB_RGT = C(KC_PGDN),     // Tab right
 TAB_CLS = C(KC_W),        // Tab close
+LASTTAB = A(KC_9),        // Last tab
 BACK = A(KC_LEFT),        // Back in browser, file manager
 ALT_F4 = G(KC_ESC),       // Close application
 WS_UP = KC_P1,            // Workspace up
@@ -77,6 +78,8 @@ TILE_CN = G(KC_C),        // Center on tile
 LAUNCHR = G(KC_SPC),      // Open launcher
 TERMINL = G(KC_ENT),      // Open terminal
 LOCKSCR = G(KC_L),        // Lock screen
+TGFLOAT = G(KC_P9),       // Toggle float
+ALT_TAB = A(KC_TAB),
   //
   // Shorthands
 VOL_UP  = KC_KB_VOLUME_UP,
@@ -96,8 +99,8 @@ SYM_ENT = (LT(_SYM, KC_ENTER)),    // Enter,  symbols layer
 NUM_BT1 = (LT(_NUM, KC_BTN1)),     // Mouse button 1 click also when automouselayer is off, numbers layer if held and no mouse
   //
   // Homerow mods
-AL_O = (MT(MOD_LALT,KC_O)),
-AL_A = (MT(MOD_LALT,KC_A))
+AL_Z = (MT(MOD_LALT,KC_Z)),
+AL_AA = (MT(MOD_LALT,DK_AA))
 };
 
 
@@ -140,29 +143,29 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_4x5(
                       KC_TAB , KC_W   , KC_F   , KC_P   , KC_B   ,         KC_J   , KC_L   , KC_U   , KC_Y   , DK_AE  ,
-    KC_Q   , KC_Z  ,  AL_A   , KC_R   , KC_S   , KC_T   , KC_G   ,         KC_M   , KC_N   , KC_E   , KC_I   , AL_O   , DK_AA  , DK_OE  ,
+    KC_Q   , AL_Z  ,  KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,         KC_M   , KC_N   , KC_E   , KC_I   , KC_O   , AL_AA  , DK_OE  ,
                                KC_X   , KC_C   , KC_D   , KC_V   ,         KC_K   , KC_H   , KC_COMM, KC_DOT ,
                                         CTL_ESC, SH_SPC , NUM_BT1,         KC_BTN3, RM_SPC , SYM_ENT
     ),
 
     [_NAV] = LAYOUT_4x5(
-                      ALT_F4 , TAB_LFT, WS_UP   , TAB_RGT, A(KC_9),        KC_DEL , KC_HOME, KC_UP  , KC_END , LOCKSCR,
-    _______, BACK   , _______, FCS_LFT, WS_DN   , C_FCS_R, __xxx__,        KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, _______, UNDO   , __xxx__,
-                               TILE_SM, TILE_CN , TILE_LG, __xxx__,        KC_APP , COPY   , PASTE  , CUT    ,
+                      ALT_F4 , TAB_LFT, WS_UP   , TAB_RGT, LASTTAB,        KC_DEL , KC_HOME, KC_UP  , KC_END , LOCKSCR,
+    __xxx__, BACK   , __xxx__, FCS_LFT, WS_DN   , C_FCS_R, TGFLOAT,        KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT, __xxx__, UNDO   , __xxx__,
+                               TILE_SM, TILE_CN , TILE_LG, ALT_TAB,        KC_APP , COPY   , PASTE  , CUT    ,
                                         _______,  _______, LAUNCHR,        _______, _______, TERMINL
     ),
 
     [_SYM] = LAYOUT_4x5(
-                      KC_BRID, KC_BRIU, VOL_DN , VOL_UP , VOL_MU ,         DK_STAR, KC_HASH,  KC_BSLS, DK_GRV,  DK_EGU ,
+                      __xxx__, __xxx__, __xxx__, __xxx__, __xxx__,         DK_STAR, KC_HASH,  KC_BSLS, DK_GRV,  DK_EGU ,
     __xxx__, DK_DOL , DK_AMPR, DK_AT  , DK_QUES, KC_EXLM, DK_PIPE,         DK_SLSH, DK_LPRN,  DK_LBRC, DK_LCBR, DK_LABK, DK_TILD, __xxx__,
                                __xxx__, __xxx__, __xxx__, __xxx__,         DK_PLUS, DK_MNUS,  DK_UNSC, DK_EQUL,
                                         _______, _______, _______,         _______, _______, _______
     ),
 
     [_NUM] = LAYOUT_4x5(
-                      __xxx__, KC_F3  , KC_F2  , KC_F1  , __xxx__,         __xxx__, KC_1   , KC_2   , KC_3   , __xxx__,
-    KC_F12 , KC_F11 , KC_F10 , KC_F6  , KC_F5  , KC_F4  , __xxx__,         __xxx__, KC_4   , KC_5   , KC_6   , KC_0   , __xxx__, QK_BOOT,
-                               KC_F9  , KC_F8  , KC_F7  , __xxx__,         __xxx__, KC_7   , KC_8   , KC_9   ,
+                      __xxx__, KC_F3  , KC_F2  , KC_F1  , VOL_UP ,         KC_BRIU, KC_1   , KC_2   , KC_3   , __xxx__,
+    KC_F12 , KC_F11 , KC_F10 , KC_F6  , KC_F5  , KC_F4  , VOL_MU ,         __xxx__, KC_4   , KC_5   , KC_6   , KC_0   , __xxx__, QK_BOOT,
+                               KC_F9  , KC_F8  , KC_F7  , VOL_DN ,         KC_BRID, KC_7   , KC_8   , KC_9   ,
                                         _______, _______, _______,         _______, _______, _______
     ),
 
