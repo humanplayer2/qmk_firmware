@@ -98,9 +98,11 @@ SH_SPC  = (MT(MOD_RSFT,KC_SPACE)), // Space,  shift
 SYM_ENT = (LT(_SYM, KC_ENTER)),    // Enter,  symbols layer
 NUM_BT1 = (LT(_NUM, KC_BTN1)),     // Mouse button 1 click also when automouselayer is off, numbers layer if held and no mouse
   //
-  // Homerow mods
+  // Mod-taps
 AL_Z = (MT(MOD_LALT,KC_Z)),
-AL_AA = (MT(MOD_LALT,DK_AA))
+AL_Q = (MT(MOD_LALT,KC_Q)),
+AL_AA = (MT(MOD_LALT,DK_AA)),
+AL_OE = (MT(MOD_LALT,DK_OE))
 };
 
 
@@ -143,7 +145,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_4x5(
                       KC_TAB , KC_W   , KC_F   , KC_P   , KC_B   ,         KC_J   , KC_L   , KC_U   , KC_Y   , DK_AE  ,
-    KC_Q   , AL_Z  ,  KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,         KC_M   , KC_N   , KC_E   , KC_I   , KC_O   , AL_AA  , DK_OE  ,
+    AL_Q   , KC_Z  ,  KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,         KC_M   , KC_N   , KC_E   , KC_I   , KC_O   , DK_AA  , AL_OE  ,
                                KC_X   , KC_C   , KC_D   , KC_V   ,         KC_K   , KC_H   , KC_COMM, KC_DOT ,
                                         CTL_ESC, SH_SPC , NUM_BT1,         KC_BTN3, RM_SPC , SYM_ENT
     ),
