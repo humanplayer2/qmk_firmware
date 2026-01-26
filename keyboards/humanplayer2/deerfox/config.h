@@ -18,9 +18,9 @@
 
 #define POINTING_DEVICE_ROTATION_180
 
-#define PS2_MOUSE_X_MULTIPLIER 2
-#define PS2_MOUSE_Y_MULTIPLIER 2
-#define PS2_MOUSE_V_MULTIPLIER 1
+// #define PS2_MOUSE_X_MULTIPLIER 2
+// #define PS2_MOUSE_Y_MULTIPLIER 2
+// #define PS2_MOUSE_V_MULTIPLIER 1
 
 // Do not use: causes that non-mouse side keys must be held to send
 // #define PS2_MOUSE_USE_REMOTE_MODE
