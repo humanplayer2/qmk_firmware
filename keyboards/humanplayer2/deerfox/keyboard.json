@@ -8,7 +8,8 @@
     "usb": {
         "vid": "0x1984",
         "pid": "0x0000",
-        "device_version": "1.0.0"
+        "device_version": "1.0.0",
+        "force_nkro": true
     },
     "features": {
         "bootmagic": true,
@@ -27,6 +28,10 @@
     "bootmagic": {
         "enabled": true,
         "matrix": [ 0, 0 ]
+    },
+    "tapping": {
+        "term": 175,
+        "permissive_hold": true        
     },
     "matrix_pins": {
         "cols": [ "GP9", "GP8", "GP7", "GP6", "GP5"],
