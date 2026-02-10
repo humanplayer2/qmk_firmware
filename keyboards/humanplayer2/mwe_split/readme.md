@@ -1,3 +1,10 @@
+
+qmk flash -kb humanplayer2/mwe_split -km default -bl uf2-split-left
+qmk flash -kb humanplayer2/mwe_split -km default -bl uf2-split-right
+
+
+# Question:
+
 I'm building my first split keyboard using a TRS connection. I have a minimal working example firmware, with which the two halves communicate. It uses `GP0` for `soft_serial_pin` in `keyboard.json`.
 
 I would to use `GP1` for `soft_serial_pin`. When I change it, re-flash both sides, and move my jump wire from `GP0` to `GP1` on both sides, I no longer get output from the non-USB connected side.

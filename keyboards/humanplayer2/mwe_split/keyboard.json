@@ -15,14 +15,14 @@
         "transport": {"protocol": "serial"},
         "matrix_pins": {
             "right": {
-                "cols": ["GP21"],
-                "rows": ["GP9"]
+                "cols": ["GP8"],
+                "rows": ["GP14"]
             }
         }
     },
     "matrix_pins": {
-        "cols": [ "GP21"],
-        "rows": [ "GP9"]
+        "cols": [ "GP8"],
+        "rows": [ "GP14"]
     },
     "layouts": {
         "LAYOUT_1x2": {
