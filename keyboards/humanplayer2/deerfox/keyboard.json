@@ -12,7 +12,6 @@
         "force_nkro": true
     },
     "features": {
-        "bootmagic": true,
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
@@ -25,10 +24,6 @@
         "driver": "vendor",
         "enabled": true
     },
-    "bootmagic": {
-        "enabled": true,
-        "matrix": [ 0, 0 ]
-    },
     "tapping": {
         "term": 175,
         "permissive_hold": true        
@@ -39,9 +34,6 @@
     },
     "split": {
         "enabled": true,
-        "bootmagic": {
-            "matrix": [ 4, 0 ]
-        },
         "matrix_pins": {
             "right": {
                 "cols": [ "GP26", "GP22", "GP20", "GP23", "GP21"],
