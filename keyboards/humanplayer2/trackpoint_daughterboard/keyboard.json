@@ -1,0 +1,31 @@
+{
+    "keyboard_name": "mwe_tp_zero trackpoint",
+    "manufacturer": "humanplayer2",
+    "maintainer": "humanplayer2",
+    "url": "https://github.com/humanplayer2/mkmods",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "diode_direction": "COL2ROW",
+    "usb": {
+        "vid": "0x1984",
+        "pid": "0x8707",
+        "device_version": "1.0.0"
+    },
+    "matrix_pins": {
+        "cols": [ "GP14"],
+        "rows": [ "GP15"]
+    },
+    "ps2": {
+        "clock_pin": "GP2",
+        "data_pin": "GP1",
+        "driver": "vendor",
+        "enabled": true
+    },
+    "layouts": {
+        "LAYOUT_1x1": {
+            "layout": [
+                {"matrix": [0, 0], "x": 0, "y": 0, "label": "key" }
+            ]
+        }
+    }
+}
