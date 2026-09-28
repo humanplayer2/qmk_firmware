@@ -79,8 +79,9 @@ LAUNCHR = G(KC_SPC),      // Open launcher
 TERMINL = G(KC_ENT),      // Open terminal
 LOCKSCR = G(KC_L),        // Lock screen
 TGFLOAT = G(KC_P9),       // Toggle float
-ALT_TAB = A(KC_TAB),
-  //
+ALT_TAB = A(KC_TAB),      // Desktops overview
+SCRSHOT = LSG(KC_PSCR),   // Select area screenshot (KDE default: Meta+Shift+Print)
+//
   // Shorthands
 VOL_UP  = KC_KB_VOLUME_UP,
 VOL_DN  = KC_KB_VOLUME_DOWN,
@@ -163,7 +164,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NUM] = LAYOUT_1x1(
-              __xxx__, KC_F3  , KC_F2  , KC_F1  , VOL_UP ,         KC_BRIU, KC_1   , KC_2   , KC_3   , __xxx__,
+              SCRSHOT, KC_F3  , KC_F2  , KC_F1  , VOL_UP ,         KC_BRIU, KC_1   , KC_2   , KC_3   , __xxx__,
     KC_F12 ,  KC_F10 , KC_F6  , KC_F5  , KC_F4  , VOL_MU ,         __xxx__, KC_4   , KC_5   , KC_6   , KC_0   ,  QK_BOOT,
               KC_F11 , KC_F9  , KC_F8  , KC_F7  , VOL_DN ,         KC_BRID, KC_7   , KC_8   , KC_9   , __xxx__,
                                 _______, _______, _______,         _______, _______, _______
